@@ -7,4 +7,12 @@ class TasksController < ApplicationController
   end
 
   def show ;end
+
+  private
+
+  def tasks_params
+  end
+
+  def find_task
+  end
 end
