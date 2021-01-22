@@ -20,6 +20,22 @@ class TasksController < ApplicationController
 
   def show ;end
 
+  def edit
+  end
+
+  def update
+    if @task.update(tasks_params)
+      redirect_to @task
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to root_path, notice: 'Photo was successfully destroyed.'
+  end
+
   private
 
   def tasks_params

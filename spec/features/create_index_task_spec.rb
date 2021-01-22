@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Tasks", type: :system do
+RSpec.describe "Tasks", type: :feature do
 
   describe '#index' do
     it 'should display newly created task on root' do
       visit new_task_path
+      expect(page).to have_content('New Task')
       fill_in 'Task Title', with: 'Test Task'
       fill_in 'Task Description', with: 'Test Description'
       fill_in 'Your company', with: 'Test Description'
@@ -18,6 +19,7 @@ RSpec.describe "Tasks", type: :system do
   describe '#create' do
     it 'should create valid task' do
       visit new_task_path
+      expect(page).to have_content('New Task')
       fill_in 'Task Title', with: 'Test Task'
       fill_in 'Task Description', with: 'Test Description'
       fill_in 'Your company', with: 'Test Description'
@@ -27,6 +29,7 @@ RSpec.describe "Tasks", type: :system do
 
     it 'should not create invalid task' do
       visit new_task_path
+      expect(page).to have_content('New Task')
       fill_in 'Task Title', with: ''
       fill_in 'Task Description', with: ''
       fill_in 'Your company', with: 'Test Description'
