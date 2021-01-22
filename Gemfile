@@ -19,6 +19,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'rspec-rails', '~> 4.0.2'
   gem 'factory_bot_rails'
+  gem 'guard'
 end
 
 group :development do
