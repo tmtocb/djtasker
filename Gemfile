@@ -20,6 +20,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.2'
   gem 'factory_bot_rails'
   gem 'guard'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
