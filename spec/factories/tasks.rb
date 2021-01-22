@@ -4,5 +4,6 @@ FactoryBot.define do
     description { "MyText" }
     company { "MyString" }
     url { "MyString" }
+    category_id { 1 }
   end
 end

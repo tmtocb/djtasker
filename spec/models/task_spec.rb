@@ -36,4 +36,8 @@ RSpec.describe Task, type: :model do
       [old_task, new_task ])
     end
   end
+
+  describe '#associations' do
+    it { is_expected.to belong_to(:category) }
+  end
 end
