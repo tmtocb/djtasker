@@ -24,4 +24,16 @@ RSpec.describe Task, type: :model do
       expect(valid_task).to be_valid
     end
   end
+
+  describe '.recent' do
+    it 'should list tasks in descending order' do
+      old_task = create :task, title: 'oldtask', description: 'oldtask', company: 'oldtask'
+      new_task = create :task, title: 'newtask', description: 'newtask', company: 'newtask'
+      expect(described_class.recent).to eq(
+      [ new_task, old_task ])
+      old_task.update_column :created_at, Time.now
+      expect(described_class.recent).to eq(
+      [old_task, new_task ])
+    end
+  end
 end
