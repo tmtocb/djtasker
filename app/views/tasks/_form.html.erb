@@ -1,0 +1,10 @@
+<%= simple_form_for @task do |f| %>
+  <%= f.error_notification %>
+  <div class="form-group">
+    <%= f.input :title, label: "Task Title", class: "form-control" %>
+    <%= f.input :description, as: :text, label: "Task Description", class: "form-control" %>
+    <%= f.input :company, label: "Your company", class: "form-control" %>
+    <%= f.input :url, label: "Link to Task", class: "form-control" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
